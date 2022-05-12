@@ -3,7 +3,7 @@ const multer = require("multer");
 const storage = multer.diskStorage({
   destination: "public",
   filename: (req, file, cb) => {
-    const fileName = file.originalname.toLowerCase().split(" ").join("-");
+    const fileName = file.originalname.split(" ").join("-");
     cb(null, fileName);
   },
 });
